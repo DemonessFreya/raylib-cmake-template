@@ -28,7 +28,7 @@ target_link_libraries(main
     raylib
 )
 # Make main find the <raylib.h> header (and others)
-target_include_directories(main PUBLIC "${raylib_SOURCE_DIR}/src")
+target_include_directories(main PUBLIC "${CMAKE_BINARY_DIR}/_deps/raylib-src/src")
 
 if (EMSCRIPTEN)
     set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -lidbfs.js -s USE_GLFW=3 --shell-file ${CMAKE_CURRENT_LIST_DIR}/web/minshell.html --preload-file ${CMAKE_CURRENT_LIST_DIR}/resources/@resources/ -s GL_ENABLE_GET_PROC_ADDRESS=1")
